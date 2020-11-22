@@ -1,0 +1,256 @@
+/*********************css reset*********************/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, .content, .page, .page_box {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, 'STXihei', 'STHeiti Light', '»ªÎÄÏ¸ºÚ', sans-serif;
+  line-height: 1;
+  background-color: #F1F1F1;
+  height: 100%;
+}
+.content {
+  position: relative;
+}
+.content .nav_wrap{
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  width: 150px;
+  height: 480px;
+  margin-top: -240px;
+  z-index: 100;
+}
+.nav_wrap .nav{
+  list-style: none;
+}
+.nav_wrap .nav .nav_item{
+  height: 38px;
+  line-height: 38px;
+  font-size: 18px;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  font-weight: bolder;
+  color: #87e9ff;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.nav_wrap .nav .nav_item.current{
+  color: #fff;
+  border: 1px #84f4ff solid;
+  background: rgba(0, 103, 165, 0.3);
+}
+.download_wrap{
+  width: 100%;
+}
+.download_wrap>div{
+  margin-bottom: 10px;
+}
+.download_wrap .dowanload_btn{
+  height: 38px;
+  line-height: 38px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.download_wrap .dowanload_btn .app_icon{
+  display: inline-block;
+  width: 18px;
+  height: 22px;
+  margin-right: 10px;
+}
+.download_wrap .ios{
+  background: #000;
+}
+.download_wrap .ios .app_icon{
+  background: url(../image/ios_icon.png);
+  background-size: cover;
+}
+.download_wrap .android{
+  background: #5dad0e;
+}
+.download_wrap .android .app_icon{
+  background: url(../image/android_icon.png);
+  background-size: cover;
+}
+.download_wrap .taptap{
+  background: #12b9c7;
+}
+.download_wrap .taptap .app_icon{
+  width: 80px;
+  height: 21px;
+  background: url(../image/tap_icon.png);
+  background-size: cover;
+  margin-right: 0;
+}
+.qrocde{
+  text-align: center;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bolder;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.09) inset,  0px 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.qrocde img{
+  width: 110px;
+  margin-top: 15px;
+}
+.content .about_btn{
+  position: absolute;
+  width: 171px;
+  height: 47px;
+  background: url(../image/about_btn.png);
+  background-size: cover;
+  bottom: 40px;
+  left: 40px;
+  z-index: 100;
+  cursor: pointer;
+}
+.content .page_wrap{
+  height: 100%;
+}
+.page{
+  position: relative;
+}
+.page .page_content{
+  height: 100%;
+}
+.page1{
+  /*display: none;*/
+}
+.page1 .logo{
+  /*display: none;*/
+  width: 637px;
+  height: 369px;
+  background: url('../image/logo.png') center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 160px;
+}
+.page1 .page_content{
+  height: 100%;
+  background: url('../image/home_bg.png');
+  background-size: cover;
+  background-position: bottom center;
+}
+.page2 .page_content{
+  
+}
+.page_content .page_title{
+  width: 267px;
+  height: 36px;
+  margin: 0 auto;
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  margin-left: -133px;
+  z-index: 100;
+}
+.page_content .page_title img{
+  width: 100%;
+}
+.page_content .hero_head_wrap{
+  position: absolute;
+  background: url(../image/hero_bottom.png) center bottom no-repeat;
+  width: 565px;
+  height: 100px;
+  bottom: -8px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  /*margin-left: -283px;*/
+  z-index: 100;
+}
+.page_content .hero_head{
+  position: absolute;
+  width: 444px;
+  height: 90px;
+  overflow: hidden;
+  left: 50%;
+  transform: translate(-50%);
+  /*margin-left: -230px;*/
+  padding-top: 18px;
+  padding-right: 24px;
+}
+.hero_head_list{
+  /*list-style: none;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*margin-top: 8px;*/
+}
+.hero_head_list .head_item{
+  width: 56px;
+  height: 56px;
+}
+.hero_avtor{
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px #7eeeff solid;
+  border-radius: 4px;
+  background: #2e4c79;
+  /*width: 56px;
+  height: 56px;*/
+  /*transition: all 1000ms ease 0s;*/
+}
+.hero_head_list .head_item.swiper-slide-active{
+  margin-top: -18px;
+  width: 86px;
+  height: 90px;
+
+}
+.hero_head_list .head_item.swiper-slide-active .hero_avtor{
+  background: url(../image/head_center.png) center no-repeat;
+  border: 0;
+  /*margin-left: -15px;*/
+}
+.page2 .page_content .hero_list{
+  width: 100%;
+  height: 100%;
+}
+.page2 .page_content .hero_list .hero_box{
+  height: 100%;
+}
+.page2 .page_content .hero_list .hero_box .hero_item{
+  height: 100%;
+}
+.page2 .page_content .hero_list .hero_1{
+  height: 100%;
+  background: url('../image/heros/hero1.png');
+  background-size: cover;
+  background-position: bottom center;
+}
+.page2 .page_content .hero_list .hero_2{
+  height: 100%;
+  background: url('../image/heros/hero2.png');
+  background-size: cover;
+  background-position: bottom center;
+}
+.page3 .page_content{
+  height: 100%;
+  background: url('../image/tese_bg.jpg');
+  background-size: cover;
+  background-position: bottom center;
+}
+
+
+
+
+
+
+
+
