@@ -15,6 +15,20 @@ body {
   background-color: #F1F1F1;
   height: 100%;
 }
+.video_wrap{
+    overflow: hidden;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+.intro_video{
+  position: absolute;
+
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+
+  object-fit: cover;
+  height: 100%; width: 100%;
+}
 .content {
   position: relative;
 }
@@ -144,9 +158,9 @@ body {
 }
 .page1 .page_content{
   height: 100%;
-  background: url('../image/home_bg.png');
-  background-size: cover;
-  background-position: bottom center;
+  /*background: url('../image/home_bg.png');*/
+  /*background-size: cover;*/
+  /*background-position: bottom center;*/
 }
 .page2 .page_content{
   
@@ -207,16 +221,27 @@ body {
   height: 56px;*/
   /*transition: all 1000ms ease 0s;*/
 }
+.hero_avtor img{
+  height: 100%;
+}
 .hero_head_list .head_item.swiper-slide-active{
-  margin-top: -18px;
+  margin-top: -24px;
   width: 86px;
-  height: 90px;
-
+  height: 102px;
 }
 .hero_head_list .head_item.swiper-slide-active .hero_avtor{
   background: url(../image/head_center.png) center no-repeat;
+  background-size: contain;
   border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /*margin-left: -15px;*/
+}
+.hero_head_list .head_item.swiper-slide-active .hero_avtor img{
+  height: 66px;
+  border: 2px #7eeeff solid;
+  border-radius: 4px;
 }
 .page2 .page_content .hero_list{
   width: 100%;
@@ -227,16 +252,35 @@ body {
 }
 .page2 .page_content .hero_list .hero_box .hero_item{
   height: 100%;
+  position: relative;
+}
+.page2 .page_content .hero_list .hero_box .hero_item .hero_box{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 56%;
+  bottom: 7%;
+}
+.page2 .page_content .hero_list .hero_box .hero_item img{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.page2 .page_content .hero_list .hero_box .hero_item .play_btn{
+  position: absolute;
+  width: 80px;
+  right: 6%;
+  bottom: 8%;
 }
 .page2 .page_content .hero_list .hero_1{
   height: 100%;
-  background: url('../image/heros/hero1.png');
+  background: url('../image/heros/bg1.jpg');
   background-size: cover;
   background-position: bottom center;
 }
 .page2 .page_content .hero_list .hero_2{
   height: 100%;
-  background: url('../image/heros/hero2.png');
+  background: url('../image/heros/bg2.jpg');
   background-size: cover;
   background-position: bottom center;
 }
@@ -247,9 +291,42 @@ body {
   background-position: bottom center;
 }
 
+.game_feature{
+  width: 800px;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px rgba(255,255,255,0.23) solid;
+  border-radius: 14px;
+}
+.game_feature .game_box{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.game_feature .game_box img{
+  width: 100%;
 
+}
+.game_feature .game_pagination{
+  bottom: -36px;
+}
 
-
+.game_feature .game_pagination .swiper-pagination-bullet{
+  width: 16px;
+  height: 16px;
+  background: url(../image/page.png) center no-repeat;
+  background-size: contain;
+  opacity: 1;
+  margin: 0 8px;
+}
+.game_feature .game_pagination .swiper-pagination-bullet-active{
+  background: url(../image/page_active.png) center no-repeat;
+  background-size: contain;
+}
 
 
 
