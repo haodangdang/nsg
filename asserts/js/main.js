@@ -4,6 +4,7 @@ var main = {
 		this.initPage();
 		this.bind();
 		this.initVideo();
+		this.initPlayBtn();
 		this.initHero();
 		this.initFeature();
 	},
@@ -12,21 +13,61 @@ var main = {
 		$('.nav_item').on('click', function () {
 			var index = $(this).index();
 			self.pageSwiper.slideTo(index, 500, true);
+		});
+		$('.about_btn').on('click', function () {
+			self.showModal();
+		});
+		$('.close_modal').on('click', function () {
+			self.hideModal();
+		})
+	},
+	initPlayBtn: function () {
+		var player = new SVGA.Player('#homePlay');
+		var parser = new SVGA.Parser('#homePlay'); 
+		parser.load('playbtn.svga', function(videoItem) {
+		    player.setVideoItem(videoItem);
+		    player.startAnimation();
 		})
 	},
 	initVideo: function () {
-		var bv = new Bideo();
-		bv.init({
-			videoEl: document.querySelector('#intro_video'),
-			container: document.querySelector('#video_wrap'),
+		var self = this;
+		var bvintro = new Bideo();
+		var bvloop = new Bideo();
+		bvintro.init({
+			videoEl: document.querySelector('#video_intro'),
+			container: document.querySelector('#video_intro_wrap'),
 			resize: true,
+			autoplay: false,
 			src: [
 		      {
-		        src: 'asserts/video/loop.mp4',
+		        src: 'asserts/video/intro.mp4',
 		        type: 'video/mp4'
 		      }
 		    ],
-		})
+		    onLoad: function () {
+		    	bvloop.init({
+					videoEl: document.querySelector('#intro_loop_video'),
+					container: document.querySelector('#video_wrap'),
+					resize: true,
+					src: [
+				      {
+				        src: 'asserts/video/loop.mp4',
+				        type: 'video/mp4'
+				      }
+				    ],
+				    onLoad: function () {
+				    	self.hideLoading();
+		    			bvintro.videoEl.play();
+				    }
+				});
+		    }
+		});
+	},
+	hideLoading: function () {
+		$('.loading').hide();
+		setTimeout(function () {
+			$('#video_intro_wrap').hide();
+		},700)
 	},
 	initPage: function () {
 		var self = this;
@@ -35,6 +76,7 @@ var main = {
 		    spaceBetween: 0,
         	slidesPerView: 1,
         	mousewheel: true,
+        	freeModeSticky : true,
         	preventIntercationOnTransition: true,
         	hashNavigation: {
 	            watchState: true
@@ -50,7 +92,7 @@ var main = {
 	initHero: function () {
 		var heroSwiper = new Swiper ('.hero_list', {
 		    autoplay: {
-	            delay: 50000,
+	            delay: 5000,
 	            disableOnInteraction: false
 	        },
 	        loop: true,
@@ -103,6 +145,12 @@ var main = {
 		    },
 		    loop: true,
 		});
-	}
+	},
+	showModal: function () {
+		$('.about_modal').show();
+	},
+	hideModal: function () {
+		$('.about_modal').hide();
+	},
 }
 main.init();

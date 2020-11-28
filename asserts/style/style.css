@@ -10,16 +10,43 @@ html, .content, .page, .page_box {
 }
 
 body {
-  font-family: Helvetica, 'STXihei', 'STHeiti Light', sans-serif;
+  font-family: JDJZONGYI, Helvetica, 'STXihei', 'STHeiti Light', sans-serif;
   line-height: 1;
   height: 100%;
+}
+.loading{
+  /*display: none;*/
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #174559;
+  z-index: 1000;
+  color: #fff;
+  text-align: center; 
+  font-size: 20px;
+}
+.loading div{
+  width: 260px;
+  height: 111px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 20px;
+}
+.loading div img{
+  width: 100%;
+  margin-bottom: 20px;
 }
 .video_wrap{
     overflow: hidden;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
 }
-.intro_video{
+#video_intro_wrap{
+  z-index: 100;
+}
+.video_item{
   position: absolute;
 
   top: 50%; left: 50%;
@@ -63,6 +90,7 @@ body {
 }
 .download_wrap{
   width: 100%;
+  padding-top: 10px;
 }
 .download_wrap>div{
   margin-bottom: 10px;
@@ -160,9 +188,6 @@ body {
 }
 .page1 .page_content{
   height: 100%;
-  /*background: url('../image/home_bg.png');*/
-  /*background-size: cover;*/
-  /*background-position: bottom center;*/
 }
 .page2 .page_content{
   
@@ -330,6 +355,7 @@ body {
   background-size: contain;
 }
 .about_modal{
+  display: none;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -337,6 +363,14 @@ body {
   left: 0;
   background: rgba(0,0,0,0.7);
   z-index: 1000;
+}
+#homePlay{
+  position: absolute;
+  left: 30%;
+  width: 160px;
+  height: 160px;
+  z-index: 10000;
+  bottom: -76px;
 }
 
 .about_modal .about_bg{
@@ -348,7 +382,17 @@ body {
   top: 50%;
   transform: translate(0, -50%);
 }
-
+.about_bg .close_modal{
+  width: 3%;
+  position: absolute;
+  left: 50%;
+  bottom: -16%;
+  transform: translate(-50%);
+  cursor: pointer;
+}
+.about_bg .close_modal img{
+  width: 100%;
+}
 .about_bg .title{
   color: #51e4ff;
   font-size: 40px;

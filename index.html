@@ -11,12 +11,12 @@
 	<link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
 	<link rel="stylesheet" href="./asserts/style/style.css"/>
 	<style type="text/css">
-		/*@font-face {
+		@font-face {
             font-family: JDJZONGYI;
-            src: url('./asserts/style/FZJW.ttf');
-        }*/
+            src: url('./asserts/font/ruizi.TTF');
+        }
         .getfont{
-            /*font-family: JDJZONGYI;*/
+            font-family: JDJZONGYI;
             position: absolute;
             top: -10000rem;
         }
@@ -25,6 +25,12 @@
 <body>
 	<div class="content">
 		<div class="getfont">f</div>
+		<div class="loading">
+			<div class="">
+				<img src="./asserts/image/logo1.png"><br>
+				加载中。。。
+			</div>
+		</div>
 		<div class="nav_wrap">
 			<ul class="nav">
 				<li class="nav_item current">首页</li>
@@ -67,16 +73,23 @@
 						<div class="tip">加群交流</div>
 					</div>
 				</div>
+				<div class="close_modal"><img src="./asserts/image/hide_modal.png" alt=""></div>
 			</div>
 		</div>
 		<div class="page_wrap swiper-container">
 			<div class="page_box swiper-wrapper ">
 				<div class="page page1 swiper-slide">
 					<div class="page_content">
-						<div class="video_wrap" id="video_wrap">
-							<video id="intro_video" class="intro_video" loop muted></video>
+						<div class="video_wrap" id="video_intro_wrap">
+							<video id="video_intro" class="video_item" loop muted></video>
 						</div>
-						<div class="logo"><img src="./asserts/image/logo.png" alt=""></div>
+						<div class="video_wrap" id="video_wrap">
+							<video id="intro_loop_video" class="video_item" loop muted></video>
+						</div>
+						<div class="logo">
+							<img src="./asserts/image/logo.png" alt="">
+							<div id="homePlay" loops="0" clearsAfterStop="true"></div>
+						</div>
 					</div>
 				</div>
 				<div class="page page2 swiper-slide">
@@ -165,11 +178,7 @@
 	</div>
 	<script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>	
 	<script src="./asserts/js/lib/swiper.min.js"></script>
-	<script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/svgaplayerweb@2.3.1/build/svga.min.js"></script>
 	<script src="./asserts/js/lib/bideo.js"></script>
-	<script src="./asserts/js/main.js"></script>
-	<script type="text/javascript">
-		
-	</script>
 </body>
 </html>
