@@ -24,7 +24,7 @@ var main = {
 	initPlayBtn: function () {
 		var player = new SVGA.Player('#homePlay');
 		var parser = new SVGA.Parser('#homePlay'); 
-		parser.load('playbtn.svga', function(videoItem) {
+		parser.load('asserts/svga/playbtn.svga', function(videoItem) {
 		    player.setVideoItem(videoItem);
 		    player.startAnimation();
 		})
@@ -77,10 +77,6 @@ var main = {
         	slidesPerView: 1,
         	mousewheel: true,
         	freeModeSticky : true,
-        	preventIntercationOnTransition: true,
-        	hashNavigation: {
-	            watchState: true
-	        },
 	        on: {
 	        	slideChangeTransitionStart: function () {
 	        		$('.nav_item').removeClass('current');
