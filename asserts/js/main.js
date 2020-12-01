@@ -4,9 +4,10 @@ var main = {
 		this.initPage();
 		this.bind();
 		this.initVideo();
-		this.initPlayBtn();
+		// this.initPlayBtn();
 		this.initHero();
 		this.initFeature();
+		
 	},
 	bind: function () {
 		var self = this;
@@ -25,6 +26,15 @@ var main = {
 		var player = new SVGA.Player('#homePlay');
 		var parser = new SVGA.Parser('#homePlay'); 
 		parser.load('asserts/svga/playbtn.svga', function(videoItem) {
+		    player.setVideoItem(videoItem);
+		    player.startAnimation();
+		})
+	},
+	initHeroPlay: function (id) {
+		console.log('idid', id);
+		var player = new SVGA.Player('#'+id);
+		var parser = new SVGA.Parser('#'+id); 
+		parser.load('asserts/svga/'+id+'.svga', function(videoItem) {
 		    player.setVideoItem(videoItem);
 		    player.startAnimation();
 		})
@@ -86,9 +96,10 @@ var main = {
 		}); 
 	},
 	initHero: function () {
+		var self = this;
 		var heroSwiper = new Swiper ('.hero_list', {
 		    autoplay: {
-	            delay: 5000,
+	            delay: 50000,
 	            disableOnInteraction: false
 	        },
 	        loop: true,
@@ -101,7 +112,7 @@ var main = {
 	        mousewheel: {
 	            forceToAxis: true,
 	        },
-	        loopedSlides: 5
+	        loopedSlides: 5,
 		}); 
 		var heroHeadSwiper = new Swiper ('.hero_head', {
 		    loop: true,
