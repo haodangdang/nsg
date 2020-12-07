@@ -63,7 +63,7 @@ var main = {
 			autoplay: false,
 			src: [
 		      {
-		        src: 'https://imgs.it2048.cn/nsg/pc/video/intro.mp4',
+		        src: '//nsg.bigkraken.com/res/pc/video/intro.mp4',
 		        type: 'video/mp4'
 		      }
 		    ],
@@ -74,7 +74,7 @@ var main = {
 					resize: true,
 					src: [
 				      {
-				        src: 'https://imgs.it2048.cn/nsg/pc/video/loop.mp4',
+				        src: '//nsg.bigkraken.com/res/pc/video/loop.mp4',
 				        type: 'video/mp4'
 				      }
 				    ],
@@ -101,7 +101,7 @@ var main = {
 		}
 		
 		var data = {
-		    src: 'https://imgs.it2048.cn/nsg/common/gamevideo/video'+index+'.mp4',
+		    src: '//nsg.bigkraken.com/res/common/gamevideo/video'+index+'.mp4',
 		    type: 'video/mp4'
 		};
 		self.gameVideo.pause();
