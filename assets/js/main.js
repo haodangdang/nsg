@@ -1,13 +1,12 @@
 var main = {
 	pageSwiper: null,
+	gameVideo: null,
 	init: function () {
 		this.initPage();
 		this.bind();
 		this.initVideo();
-		// this.initPlayBtn();
 		this.initHero();
 		this.initFeature();
-		
 	},
 	bind: function () {
 		var self = this;
@@ -18,26 +17,40 @@ var main = {
 		$('.about_btn').on('click', function () {
 			self.showModal();
 		});
-		$('.close_modal').on('click', function () {
+		$('.close_modal, .about_modal').on('click', function () {
 			self.hideModal();
+		});
+		$('.video_btn').on('click', function () {
+			var id = $(this).data('id');
+			self.playGameVideo(id);
+		});
+		$('.close_video').on('click', function () {
+			self.gameVideo.pause();
+			$('.video_modal').hide();
 		})
 	},
-	initPlayBtn: function () {
-		var player = new SVGA.Player('#homePlay');
-		var parser = new SVGA.Parser('#homePlay'); 
-		parser.load('asserts/svga/playbtn.svga', function(videoItem) {
-		    player.setVideoItem(videoItem);
-		    player.startAnimation();
-		})
-	},
-	initHeroPlay: function (id) {
-		console.log('idid', id);
-		var player = new SVGA.Player('#'+id);
-		var parser = new SVGA.Parser('#'+id); 
-		parser.load('asserts/svga/'+id+'.svga', function(videoItem) {
-		    player.setVideoItem(videoItem);
-		    player.startAnimation();
-		})
+	initPage: function () {
+		var self = this;
+		self.pageSwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+		    spaceBetween: 0,
+        	// slidesPerView: 1,
+        	mousewheel: true,
+        	forceToAxis: true,
+        	freeMode: false,
+        	freeModeSticky : true,
+	        on: {
+	        	slideChangeTransitionStart: function () {
+	        		if(this.activeIndex > 0){
+	        			$('.nav').show();
+	        		}else {
+	        			$('.nav').hide();
+	        		}
+	        		$('.nav_item').removeClass('current');
+	        		$('.nav_item').eq(this.activeIndex).addClass('current');
+	            }
+	        }
+		}); 
 	},
 	initVideo: function () {
 		var self = this;
@@ -50,7 +63,7 @@ var main = {
 			autoplay: false,
 			src: [
 		      {
-		        src: 'asserts/video/intro.mp4',
+		        src: 'https://imgs.it2048.cn/nsg/pc/video/intro.mp4',
 		        type: 'video/mp4'
 		      }
 		    ],
@@ -61,7 +74,7 @@ var main = {
 					resize: true,
 					src: [
 				      {
-				        src: 'asserts/video/loop.mp4',
+				        src: 'https://imgs.it2048.cn/nsg/pc/video/loop.mp4',
 				        type: 'video/mp4'
 				      }
 				    ],
@@ -73,33 +86,41 @@ var main = {
 		    }
 		});
 	},
+	playGameVideo: function (index) {
+		var self = this;
+		// if(self.gameVideo){
+		// 	self.gameVideo.dispose();
+		// }
+		if(!self.gameVideo){
+			self.gameVideo = videojs('game_video',{
+				controls : true,
+				controlBar: {
+					pictureInPictureToggle: false
+				}
+			});
+		}
+		
+		var data = {
+		    src: 'https://imgs.it2048.cn/nsg/common/gamevideo/video'+index+'.mp4',
+		    type: 'video/mp4'
+		};
+		self.gameVideo.pause();
+		self.gameVideo.src(data);
+		self.gameVideo.load(data);
+		self.gameVideo.play();
+		$('.video_modal').show();
+	},
 	hideLoading: function () {
 		$('.loading').hide();
 		setTimeout(function () {
 			$('#video_intro_wrap').hide();
 		},700)
 	},
-	initPage: function () {
-		var self = this;
-		self.pageSwiper = new Swiper ('.swiper-container', {
-		    direction: 'vertical',
-		    spaceBetween: 0,
-        	slidesPerView: 1,
-        	mousewheel: true,
-        	freeModeSticky : true,
-	        on: {
-	        	slideChangeTransitionStart: function () {
-	        		$('.nav_item').removeClass('current');
-	        		$('.nav_item').eq(this.activeIndex).addClass('current');
-	            }
-	        }
-		}); 
-	},
 	initHero: function () {
 		var self = this;
 		var heroSwiper = new Swiper ('.hero_list', {
 		    autoplay: {
-	            delay: 50000,
+	            delay: 5000,
 	            disableOnInteraction: false
 	        },
 	        loop: true,
@@ -114,10 +135,11 @@ var main = {
 	        },
 	        loopedSlides: 5,
 		}); 
+		var space = document.documentElement.clientWidth * 50 / 1920;
 		var heroHeadSwiper = new Swiper ('.hero_head', {
 		    loop: true,
 	        slideToClickedSlide: true,
-	        spaceBetween: 50,
+	        spaceBetween: space < 50 ? 50 : space,
 	        speed: 800,
 	        slidesPerView: "auto",
 	        centeredSlides: true,
