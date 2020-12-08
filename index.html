@@ -4,11 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>不休战队</title>
-	<style>
-		
-	</style>	
-	<link href="//nsg.bigkraken.com/res/common/lib/swiper.min.css" rel="stylesheet" />
-	<link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="./assets/style/style.css"/>
 	<style type="text/css">
 		@font-face {
@@ -29,23 +24,27 @@
 		;(function(win) {
     		var tid;
     		function refreshRem() {
+    			// let screenH = document.documentElement.clientHeight;
+    			// let bgH = 1080;
+    			// let designSize = screenH * 1920 / 1080; // 设计图尺寸
     			let designSize = 1920; // 设计图尺寸
+    			console.log('----designSize---', designSize);
     			let html = document.documentElement;
     			let wW = html.clientWidth;// 窗口宽度
     			let rem = wW * 100 / designSize; 
     			document.documentElement.style.fontSize = rem + 'px';
     	    }
 	     
-		    win.addEventListener('resize', function() {
-		    	clearTimeout(tid);
-		    	tid = setTimeout(refreshRem, 300);
-		    }, false);
-		    win.addEventListener('pageshow', function(e) {
-		    	if (e.persisted) {
-		    		clearTimeout(tid);
-		    		tid = setTimeout(refreshRem, 300);
-		    	}
-		    }, false);
+		    // win.addEventListener('resize', function() {
+		    // 	clearTimeout(tid);
+		    // 	tid = setTimeout(refreshRem, 300);
+		    // }, false);
+		    // win.addEventListener('pageshow', function(e) {
+		    // 	if (e.persisted) {
+		    // 		clearTimeout(tid);
+		    // 		tid = setTimeout(refreshRem, 300);
+		    // 	}
+		    // }, false);
 
 		    refreshRem();
 
@@ -55,12 +54,12 @@
 <body>
 	<div class="content">
 		<div class="getfont">f</div>
-		<div class="loading">
+	<!-- 	<div class="loading">
 			<div class="">
 				<img src="//nsg.bigkraken.com/res/pc/image/logo1.png"><br>
 				加载中。。。
 			</div>
-		</div>
+		</div> -->
 		<div class="nav_wrap">
 			<ul class="nav">
 				<li class="nav_item current">首页</li>
@@ -85,13 +84,16 @@
 					</a>
 				</div>
 				<div class="taptap dowanload_btn">
-					<a href="https://www.taptap.com/app/201956">
+					<a href="https://www.taptap.com/app/201956" target="_blank">
 						<span class="app_icon"></span>
 					</a>
 				</div>
 			</div>
 		</div>
 		<div class="about_btn"></div>
+		
+		<link href="//nsg.bigkraken.com/res/common/lib/swiper.min.css" rel="stylesheet" />
+		<link href="//nsg.bigkraken.com/res/common/lib/video-js.min.css" rel="stylesheet" />
 		<div class="about_modal">
 			<div class="about_bg">
 				<div class="title">关注我们</div>
@@ -122,16 +124,18 @@
 			<div class="page_box swiper-wrapper ">
 				<div class="page page1 swiper-slide">
 					<div class="page_content">
+						<div class="logo">
+							<img src="//nsg.bigkraken.com/res/pc/image/logo.png" alt="">
+						</div>
+						<div class="playvideo_btn video_btn" data-id="home" id="homePlay"  src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 						<div class="video_wrap" id="video_intro_wrap">
 							<video id="video_intro" class="video_item" loop muted></video>
 						</div>
 						<div class="video_wrap" id="video_wrap">
 							<video id="intro_loop_video" class="video_item" loop muted></video>
 						</div>
-						<div class="logo">
-							<img src="//nsg.bigkraken.com/res/pc/image/logo.png" alt="">
-						</div>
-						<div class="playvideo_btn video_btn" data-id="home" id="homePlay"  src="//nsg.bigkraken.com/res/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
+						
+						
 					</div>
 				</div>
 				<div class="page page2 swiper-slide">
@@ -143,33 +147,33 @@
 							<div class="hero_box swiper-wrapper">
 								<div class="hero_item hero_1 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play" src="//nsg.bigkraken.com/res/common/svga/hero_0.svga" id="hero_0" loop="0" clearsAfterStop="true"></div>
+										<div class="hero_play" src="https://imgs.it2048.cn/nsg/common/svga/hero_0.svga" id="hero_0" loop="0" clearsAfterStop="true"></div>
 										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_0.png" alt="">
-											<div class="herovideo_btn video_btn" data-id="0" src="//nsg.bigkraken.com/res/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
+											<div class="herovideo_btn video_btn" data-id="0" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
 								</div>
 								<div class="hero_item hero_2 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play"  src="//nsg.bigkraken.com/res/common/svga/hero_1.svga"  id="hero_1" loop="0" clearsAfterStop="true"></div>
+										<div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_1.svga"  id="hero_1" loop="0" clearsAfterStop="true"></div>
 										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_1.png" alt="">
-											<div class="herovideo_btn video_btn" data-id="1" src="//nsg.bigkraken.com/res/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
+											<div class="herovideo_btn video_btn" data-id="1" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
 								</div>
 								<div class="hero_item hero_3 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play"  src="//nsg.bigkraken.com/res/common/svga/hero_2.svga"  id="hero_2" loop="0" clearsAfterStop="true"></div>
+										<div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_2.svga"  id="hero_2" loop="0" clearsAfterStop="true"></div>
 										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_2.png" alt="">
-											<div class="herovideo_btn video_btn" data-id="2" src="//nsg.bigkraken.com/res/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
+											<div class="herovideo_btn video_btn" data-id="2" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
 								</div>
 								<div class="hero_item hero_4 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play"  src="//nsg.bigkraken.com/res/common/svga/hero_3.svga"  id="hero_3" loop="0" clearsAfterStop="true"></div>
+										<div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_3.svga"  id="hero_3" loop="0" clearsAfterStop="true"></div>
 										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_3.png" alt="">
-											<div class="herovideo_btn video_btn" data-id="3" src="//nsg.bigkraken.com/res/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
+											<div class="herovideo_btn video_btn" data-id="3" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
 								</div>
@@ -203,25 +207,25 @@
 						<div class="game_feature">
 							<div class="game_box swiper-wrapper">
 								<div class="game_item swiper-slide">
-									<img src="//nsg.bigkraken.com/res/common/feature/feature1.jpg" alt="">
+									<img src="./assets/image/feature1.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="//nsg.bigkraken.com/res/common/feature/feature2.jpg" alt="">
+									<img src="./assets/image/feature2.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="//nsg.bigkraken.com/res/common/feature/feature3.jpg" alt="">
+									<img src="./assets/image/feature3.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="//nsg.bigkraken.com/res/common/feature/feature4.jpg" alt="">
+									<img src="./assets/image/feature4.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="//nsg.bigkraken.com/res/common/feature/feature5.jpg" alt="">
+									<img src="./assets/image/feature5.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="//nsg.bigkraken.com/res/common/feature/feature6.jpg" alt="">
+									<img src="./assets/image/feature6.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="//nsg.bigkraken.com/res/common/feature/feature7.jpg" alt="">
+									<img src="./assets/image/feature7.jpg" alt="">
 								</div>
 							</div>
 						    <!-- Add Pagination -->
@@ -234,8 +238,8 @@
 	</div>
 	<script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>	
 	<script src="//nsg.bigkraken.com/res/common/lib/swiper.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/svgaplayerweb@2.3.1/build/svga.min.js"></script>
-	<script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+	<script src="//nsg.bigkraken.com/res/common/lib/svga.min.js"></script>
+	<script src="//nsg.bigkraken.com/res/common/lib/video.min.js"></script>
 	<script src="//nsg.bigkraken.com/res/common/lib/bideo.js"></script>
 	<script src="./assets/js/main.js"></script>
 

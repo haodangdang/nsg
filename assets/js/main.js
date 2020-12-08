@@ -1,6 +1,7 @@
 var main = {
 	pageSwiper: null,
 	gameVideo: null,
+	videoOver: false,
 	init: function () {
 		this.initPage();
 		this.bind();
@@ -40,7 +41,7 @@ var main = {
         	freeMode: false,
         	freeModeSticky : true,
 	        on: {
-	        	slideChangeTransitionStart: function () {
+	        	slideChange: function () {
 	        		if(this.activeIndex > 0){
 	        			$('.nav').show();
 	        		}else {
@@ -48,7 +49,17 @@ var main = {
 	        		}
 	        		$('.nav_item').removeClass('current');
 	        		$('.nav_item').eq(this.activeIndex).addClass('current');
-	            }
+	            },
+	          //   slideNextTransitionStart: function () {
+	          //   	if(this.activeIndex > 0){
+	        		// 	$('.logo, .playvideo_btn').hide();
+	        		// }
+	          //   },
+	          //   slidePrevTransitionEnd: function () {
+	          //   	if(this.activeIndex == 0){
+	        		// 	$('.logo, .playvideo_btn').show();
+	        		// }
+	          //   }
 	        }
 		}); 
 	},
@@ -56,6 +67,7 @@ var main = {
 		var self = this;
 		var bvintro = new Bideo();
 		var bvloop = new Bideo();
+		console.log('hihihi111')
 		bvintro.init({
 			videoEl: document.querySelector('#video_intro'),
 			container: document.querySelector('#video_intro_wrap'),
@@ -68,21 +80,25 @@ var main = {
 		      }
 		    ],
 		    onLoad: function () {
-		    	bvloop.init({
-					videoEl: document.querySelector('#intro_loop_video'),
-					container: document.querySelector('#video_wrap'),
-					resize: true,
-					src: [
-				      {
-				        src: '//nsg.bigkraken.com/res/pc/video/loop.mp4',
-				        type: 'video/mp4'
-				      }
-				    ],
-				    onLoad: function () {
-				    	self.hideLoading();
-		    			bvintro.videoEl.play();
-				    }
-				});
+		    	console.log('hihihi')
+		    	if(!self.videoOver){
+		    		bvloop.init({
+						videoEl: document.querySelector('#intro_loop_video'),
+						container: document.querySelector('#video_wrap'),
+						resize: true,
+						src: [
+					      {
+					        src: '//nsg.bigkraken.com/res/pc/video/loop.mp4',
+					        type: 'video/mp4'
+					      }
+					    ],
+					    onLoad: function () {
+					    	self.videoOver = true;
+					    	self.hideLoading();
+			    			bvintro.videoEl.play();
+					    }
+					});
+		    	}
 		    }
 		});
 	},
@@ -111,7 +127,7 @@ var main = {
 		$('.video_modal').show();
 	},
 	hideLoading: function () {
-		$('.loading').hide();
+		// $('.loading').hide();
 		setTimeout(function () {
 			$('#video_intro_wrap').hide();
 		},700)
@@ -120,7 +136,7 @@ var main = {
 		var self = this;
 		var heroSwiper = new Swiper ('.hero_list', {
 		    autoplay: {
-	            delay: 5000,
+	            delay: 500000,
 	            disableOnInteraction: false
 	        },
 	        loop: true,
