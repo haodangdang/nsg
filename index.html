@@ -8,7 +8,7 @@
 	<style type="text/css">
 		@font-face {
             font-family: JDJZONGYI;
-            src: url('//nsg.bigkraken.com/res/common/font/JDJHCU.TTF');
+            src: url('https://imgs.it2048.cn/nsg/common/font/JDJHCU.TTF');
         }
         .getfont{
             font-family: JDJZONGYI;
@@ -19,32 +19,17 @@
 	<script>
 		// 跳转m站
 		if (/mobile/i.test(navigator.userAgent) && !/ipad/i.test(navigator.userAgent)) {
-            location.href = "//nsg.bigkraken.com/res/m/index.html"
+            location.href = "https://imgs.it2048.cn/nsg/web/m/index.html"
         }
 		;(function(win) {
     		var tid;
     		function refreshRem() {
-    			// let screenH = document.documentElement.clientHeight;
-    			// let bgH = 1080;
-    			// let designSize = screenH * 1920 / 1080; // 设计图尺寸
     			let designSize = 1920; // 设计图尺寸
-    			console.log('----designSize---', designSize);
     			let html = document.documentElement;
     			let wW = html.clientWidth;// 窗口宽度
     			let rem = wW * 100 / designSize; 
     			document.documentElement.style.fontSize = rem + 'px';
     	    }
-	     
-		    // win.addEventListener('resize', function() {
-		    // 	clearTimeout(tid);
-		    // 	tid = setTimeout(refreshRem, 300);
-		    // }, false);
-		    // win.addEventListener('pageshow', function(e) {
-		    // 	if (e.persisted) {
-		    // 		clearTimeout(tid);
-		    // 		tid = setTimeout(refreshRem, 300);
-		    // 	}
-		    // }, false);
 
 		    refreshRem();
 
@@ -54,12 +39,6 @@
 <body>
 	<div class="content">
 		<div class="getfont">f</div>
-	<!-- 	<div class="loading">
-			<div class="">
-				<img src="//nsg.bigkraken.com/res/pc/image/logo1.png"><br>
-				加载中。。。
-			</div>
-		</div> -->
 		<div class="nav_wrap">
 			<ul class="nav">
 				<li class="nav_item current">首页</li>
@@ -69,7 +48,7 @@
 			<div class="download_wrap">
 				<div class="qrocde">
 					<span>扫码下载游戏</span>
-					<img src="//nsg.bigkraken.com/res/pc/image/download_qrcode.jpg" alt="">
+					<img src="https://imgs.it2048.cn/nsg/pc/image/download_qrcode.jpg" alt="">
 				</div>
 				<div class="ios dowanload_btn">
 					<a href="javascript:void(0)">
@@ -91,16 +70,20 @@
 			</div>
 		</div>
 		<div class="about_btn"></div>
+		<div class="arrow_wrap">
+			<img class="arrow" src="https://imgs.it2048.cn/nsg/pc/image/arrow.png" alt="">
+			滑动查看更多
+		</div>
 		
-		<link href="//nsg.bigkraken.com/res/common/lib/swiper.min.css" rel="stylesheet" />
-		<link href="//nsg.bigkraken.com/res/common/lib/video-js.min.css" rel="stylesheet" />
+		<link href="https://imgs.it2048.cn/nsg/common/lib/swiper.min.css" rel="stylesheet" />
+		<link href="https://imgs.it2048.cn/nsg/common/lib/video-js.min.css" rel="stylesheet" />
 		<div class="about_modal">
 			<div class="about_bg">
 				<div class="title">关注我们</div>
 				<div class="title_en">FOLLOW US</div>
 				<div class="contact">
 					<div class="contact_item wechat">
-						<div class="qr"><img src="//nsg.bigkraken.com/res/pc/image/wechat.jpg" alt=""></div>
+						<div class="qr"><img src="https://imgs.it2048.cn/nsg/pc/image/wechat.jpg" alt=""></div>
 						<div class="tip">官方微信</div>
 					</div>
 					<div class="contact_item group">
@@ -111,13 +94,13 @@
 						<div class="tip">加群交流</div>
 					</div>
 				</div>
-				<div class="close_modal"><img src="//nsg.bigkraken.com/res/pc/image/hide_modal.png" alt=""></div>
+				<div class="close_modal"><img src="https://imgs.it2048.cn/nsg/pc/image/hide_modal.png" alt=""></div>
 			</div>
 		</div>
 		<div class="video_modal">
 			<div class="video_box">
 				<video id="game_video" controls class="game_video video-js vjs-default-skin vjs-big-play-centered" src=""></video>
-				<div class="close_video"><img src="//nsg.bigkraken.com/res/pc/image/hide_modal.png" alt=""></div>
+				<div class="close_video"><img src="https://imgs.it2048.cn/nsg/pc/image/hide_modal.png" alt=""></div>
 			</div>
 		</div>
 		<div class="page_wrap swiper-container">
@@ -125,7 +108,7 @@
 				<div class="page page1 swiper-slide">
 					<div class="page_content">
 						<div class="logo">
-							<img src="//nsg.bigkraken.com/res/pc/image/logo.png" alt="">
+							<img src="https://imgs.it2048.cn/nsg/pc/image/logo.png" alt="">
 						</div>
 						<div class="playvideo_btn video_btn" data-id="home" id="homePlay"  src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 						<div class="video_wrap" id="video_intro_wrap">
@@ -134,45 +117,48 @@
 						<div class="video_wrap" id="video_wrap">
 							<video id="intro_loop_video" class="video_item" loop muted></video>
 						</div>
-						
-						
 					</div>
 				</div>
 				<div class="page page2 swiper-slide">
+
 					<div class="page_content">
 						<div class="page_title">
-							<img src="//nsg.bigkraken.com/res/pc/image/hero_title.png" alt="">
+							<img src="https://imgs.it2048.cn/nsg/pc/image/hero_title.png" alt="">
 						</div>
 						<div class="hero_list">
 							<div class="hero_box swiper-wrapper">
 								<div class="hero_item hero_1 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play" src="https://imgs.it2048.cn/nsg/common/svga/hero_0.svga" id="hero_0" loop="0" clearsAfterStop="true"></div>
-										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_0.png" alt="">
+										<!-- <div class="hero_play" src="https://imgs.it2048.cn/nsg/common/svga/hero_0.svga" id="hero_0" loop="0" clearsAfterStop="true"></div> -->
+										<div class="hero_play" id="hero_0"></div>
+										<div class="hero_des"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/hero_des_0.png" alt="">
 											<div class="herovideo_btn video_btn" data-id="0" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
 								</div>
 								<div class="hero_item hero_2 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_1.svga"  id="hero_1" loop="0" clearsAfterStop="true"></div>
-										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_1.png" alt="">
+										<!-- <div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_1.svga"  id="hero_1" loop="0" clearsAfterStop="true"></div> -->
+										<div class="hero_play" id="hero_1"></div>
+										<div class="hero_des"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/hero_des_1.png" alt="">
 											<div class="herovideo_btn video_btn" data-id="1" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
 								</div>
 								<div class="hero_item hero_3 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_2.svga"  id="hero_2" loop="0" clearsAfterStop="true"></div>
-										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_2.png" alt="">
+										<!-- <div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_2.svga"  id="hero_2" loop="0" clearsAfterStop="true"></div> -->
+										<div class="hero_play" id="hero_2"></div>
+										<div class="hero_des"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/hero_des_2.png" alt="">
 											<div class="herovideo_btn video_btn" data-id="2" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
 								</div>
 								<div class="hero_item hero_4 swiper-slide">
 									<div class="hero_box_item">
-										<div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_3.svga"  id="hero_3" loop="0" clearsAfterStop="true"></div>
-										<div class="hero_des"><img src="//nsg.bigkraken.com/res/pc/image/heros/hero_des_3.png" alt="">
+										<!-- <div class="hero_play"  src="https://imgs.it2048.cn/nsg/common/svga/hero_3.svga"  id="hero_3" loop="0" clearsAfterStop="true"></div> -->
+										<div class="hero_play" id="hero_3"></div>
+										<div class="hero_des"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/hero_des_3.png" alt="">
 											<div class="herovideo_btn video_btn" data-id="3" src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 										</div>
 									</div>
@@ -183,65 +169,87 @@
 							<div class="hero_head">
 								<div class="hero_head_list swiper-wrapper">
 									<div class="head_item hero_1 swiper-slide">
-										<div class="hero_avtor"><img src="//nsg.bigkraken.com/res/pc/image/heros/head1.png" alt=""></div>
+										<div class="hero_avtor"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/head1.png" alt=""></div>
 									</div>
 									<div class="head_item hero_2 swiper-slide">
-										<div class="hero_avtor"><img src="//nsg.bigkraken.com/res/pc/image/heros/head2.png" alt=""></div>
+										<div class="hero_avtor"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/head2.png" alt=""></div>
 									</div>
 									<div class="head_item hero_3 swiper-slide">
-										<div class="hero_avtor"><img src="//nsg.bigkraken.com/res/pc/image/heros/head3.png" alt=""></div>
+										<div class="hero_avtor"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/head3.png" alt=""></div>
 									</div>
 									<div class="head_item hero_4 swiper-slide">
-										<div class="hero_avtor"><img src="//nsg.bigkraken.com/res/pc/image/heros/head4.png" alt=""></div>
+										<div class="hero_avtor"><img src="https://imgs.it2048.cn/nsg/pc/image/heros/head4.png" alt=""></div>
 									</div>
 								</div>
 							</div>
 						</div>
+						<canvas id="fly"></canvas>
 					</div>
 				</div>
 				<div class="page page3 swiper-slide">
 					<div class="page_content">
 						<div class="page_title">
-							<img src="//nsg.bigkraken.com/res/pc/image/tese_title.png" alt="">
+							<img src="https://imgs.it2048.cn/nsg/pc/image/tese_title.png" alt="">
 						</div>
 						<div class="game_feature">
 							<div class="game_box swiper-wrapper">
 								<div class="game_item swiper-slide">
-									<img src="./assets/image/feature1.jpg" alt="">
+									<img src="https://imgs.it2048.cn/nsg/common/feature/feature1.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="./assets/image/feature2.jpg" alt="">
+									<img src="https://imgs.it2048.cn/nsg/common/feature/feature2.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="./assets/image/feature3.jpg" alt="">
+									<img src="https://imgs.it2048.cn/nsg/common/feature/feature3.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="./assets/image/feature4.jpg" alt="">
+									<img src="https://imgs.it2048.cn/nsg/common/feature/feature4.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="./assets/image/feature5.jpg" alt="">
+									<img src="https://imgs.it2048.cn/nsg/common/feature/feature5.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="./assets/image/feature6.jpg" alt="">
+									<img src="https://imgs.it2048.cn/nsg/common/feature/feature6.jpg" alt="">
 								</div>
 								<div class="game_item swiper-slide">
-									<img src="./assets/image/feature7.jpg" alt="">
+									<img src="https://imgs.it2048.cn/nsg/common/feature/feature7.jpg" alt="">
 								</div>
 							</div>
 						    <!-- Add Pagination -->
 						    <div class="swiper-pagination game_pagination"></div>
 						</div>
+						<div class="copyright">
+				            Copyright 2019 成都大海怪科技有限公司
+				            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				            <a target="_blank" href="http://www.beian.miit.gov.cn">
+				            蜀ICP备16008524号
+				            </a>
+				            <br>
+				            <!-- <img src="http://www.beian.gov.cn/img/ghs.png" /> -->
+				            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51019002001501">
+				                川公网安备 51019002001501号
+				            </a>
+				            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				            <a target="_blank" href="img/cer.jpg">
+				                川网文【2019】3292-177号
+				            </a>
+				            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				            <a target="_blank" href="img/icp.jpg">
+				                增值电信许可证：川B2-20160215
+				            </a>
+				        </div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>	
-	<script src="//nsg.bigkraken.com/res/common/lib/swiper.min.js"></script>
-	<script src="//nsg.bigkraken.com/res/common/lib/svga.min.js"></script>
-	<script src="//nsg.bigkraken.com/res/common/lib/video.min.js"></script>
-	<script src="//nsg.bigkraken.com/res/common/lib/bideo.js"></script>
+	<script src="https://imgs.it2048.cn/nsg/common/lib/swiper.min.js"></script>
+	<script src="https://imgs.it2048.cn/nsg/common/lib/svga.min.js"></script>
+	<script src="https://imgs.it2048.cn/nsg/common/lib/video.min.js"></script>
+	<script src="https://imgs.it2048.cn/nsg/common/lib/bideo.js"></script>
 	<script src="./assets/js/main.js"></script>
+	<script src="https://imgs.it2048.cn/nsg/common/lib/fly.js"></script>
 
 </body>
 </html>

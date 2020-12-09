@@ -43,23 +43,13 @@ var main = {
 	        on: {
 	        	slideChange: function () {
 	        		if(this.activeIndex > 0){
-	        			$('.nav').show();
+	        			$('.arrow_wrap').hide();
 	        		}else {
-	        			$('.nav').hide();
+	        			$('.arrow_wrap').show();
 	        		}
 	        		$('.nav_item').removeClass('current');
 	        		$('.nav_item').eq(this.activeIndex).addClass('current');
-	            },
-	          //   slideNextTransitionStart: function () {
-	          //   	if(this.activeIndex > 0){
-	        		// 	$('.logo, .playvideo_btn').hide();
-	        		// }
-	          //   },
-	          //   slidePrevTransitionEnd: function () {
-	          //   	if(this.activeIndex == 0){
-	        		// 	$('.logo, .playvideo_btn').show();
-	        		// }
-	          //   }
+	            }
 	        }
 		}); 
 	},
@@ -75,7 +65,7 @@ var main = {
 			autoplay: false,
 			src: [
 		      {
-		        src: '//nsg.bigkraken.com/res/pc/video/intro.mp4',
+		        src: 'https://imgs.it2048.cn/nsg/pc/video/intro.mp4',
 		        type: 'video/mp4'
 		      }
 		    ],
@@ -88,7 +78,7 @@ var main = {
 						resize: true,
 						src: [
 					      {
-					        src: '//nsg.bigkraken.com/res/pc/video/loop.mp4',
+					        src: 'https://imgs.it2048.cn/nsg/pc/video/loop.mp4',
 					        type: 'video/mp4'
 					      }
 					    ],
@@ -117,7 +107,7 @@ var main = {
 		}
 		
 		var data = {
-		    src: '//nsg.bigkraken.com/res/common/gamevideo/video'+index+'.mp4',
+		    src: 'https://imgs.it2048.cn/nsg/common/gamevideo/video'+index+'.mp4',
 		    type: 'video/mp4'
 		};
 		self.gameVideo.pause();
@@ -136,7 +126,7 @@ var main = {
 		var self = this;
 		var heroSwiper = new Swiper ('.hero_list', {
 		    autoplay: {
-	            delay: 500000,
+	            delay: 6000,
 	            disableOnInteraction: false
 	        },
 	        loop: true,
