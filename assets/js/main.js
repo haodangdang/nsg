@@ -34,8 +34,9 @@ var main = {
 		})
 	},
 	initHeroSize: function () {
-		var w = document.body.clientWidth;
-		var h = w < 1920 ? 768 : 1080;
+		var sw = document.body.clientWidth;
+		var sh = document.body.clientHeight;
+		var h = (sw <= 1366 && sh <= 768) ? 768 : 1080;
 		var screenHight = document.body.clientHeight;
 		var scale = screenHight/h;
 		var moveX = 50 / scale;
@@ -71,7 +72,6 @@ var main = {
 		var self = this;
 		var bvintro = new Bideo();
 		var bvloop = new Bideo();
-		console.log('hihihi111')
 		bvintro.init({
 			videoEl: document.querySelector('#video_intro'),
 			container: document.querySelector('#video_intro_wrap'),
