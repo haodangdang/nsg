@@ -3,11 +3,14 @@ var main = {
 	gameVideo: null,
 	videoOver: false,
 	init: function () {
-		this.initPage();
-		this.bind();
-		this.initVideo();
-		this.initHero();
-		this.initFeature();
+		var self = this;
+		self.initPage();
+		self.initHeroSize();
+		self.bind();
+		self.initVideo();
+		self.initHero();
+		self.initHeroFly();
+		self.initFeature();
 	},
 	bind: function () {
 		var self = this;
@@ -29,6 +32,17 @@ var main = {
 			self.gameVideo.pause();
 			$('.video_modal').hide();
 		})
+	},
+	initHeroSize: function () {
+		var w = document.body.clientWidth;
+		var h = w < 1920 ? 768 : 1080;
+		var screenHight = document.body.clientHeight;
+		var scale = screenHight/h;
+		var moveX = 50 / scale;
+		var dom = document.querySelectorAll('.hero_box_item');
+		for (i = 0; i < dom.length; i++) {
+			dom[i].style.transform =  `scale(${scale}) translateX(-${moveX}%)`;
+		}
 	},
 	initPage: function () {
 		var self = this;
@@ -70,7 +84,6 @@ var main = {
 		      }
 		    ],
 		    onLoad: function () {
-		    	console.log('hihihi')
 		    	if(!self.videoOver){
 		    		bvloop.init({
 						videoEl: document.querySelector('#intro_loop_video'),
@@ -126,7 +139,7 @@ var main = {
 		var self = this;
 		var heroSwiper = new Swiper ('.hero_list', {
 		    autoplay: {
-	            delay: 6000,
+	            delay: 6000000,
 	            disableOnInteraction: false
 	        },
 	        loop: true,
@@ -163,6 +176,152 @@ var main = {
 		// 双向控制
 	    heroSwiper.controller.control = heroHeadSwiper;
 	    heroHeadSwiper.controller.control = heroSwiper;
+	},
+	initHeroFly: function () {
+		new particleCanvas(
+        "hero_particle",
+        [
+            {
+                // 材料
+                "type": {
+                    "typeName": "image",
+					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/2.png"
+                },
+                // 数量
+                "number": 5,
+                // 尺寸
+                "size": {
+                    "min": 30,
+                    "max": 80
+                },
+                // 速度
+                "speed": {
+                    "min": 2,
+                    "max": 12
+                },
+                // 偏移(运动)角度
+                "angle": {
+                    "value": 160,
+                    "float": 10
+                },
+                // 旋转
+                "rota": {
+                    "value": 15,
+                    "speed": 0.1,
+                    "floatValue": 1,
+                    "floatSpeed": 0.2
+                },
+                "area": {
+                    "leftTop": [1300, 100],
+                    "rightBottom": [1900, 300]
+                },
+            },
+            {
+                // 材料
+                "type": {
+                    "typeName": "image",
+					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/1.png"
+                },
+                // 数量
+                "number": 2,
+                // 尺寸
+                "size": {
+                    "min": 60,
+                    "max": 80
+                },
+                // 速度
+                "speed": {
+                    "min": 2,
+                    "max": 5
+                },
+                // 偏移(运动)角度
+                "angle": {
+                    "value": 160,
+                    "float": 5
+                },
+                // 旋转
+                "rota": {
+                    "value": 10,
+                    "speed": 0.1,
+                    "floatValue": 10,
+                    "floatSpeed": 0.3
+                },
+                "area": {
+                    "leftTop": [200, 600],
+                    "rightBottom": [500, 1000]
+                },
+            },
+            {
+                // 材料
+                "type": {
+                    "typeName": "image",
+					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/4.png"
+                },
+                // 数量
+                "number": 1,
+                // 尺寸
+                "size": {
+                    "min": 360,
+                    "max": 380
+                },
+                // 速度
+                "speed": {
+                    "min": 5,
+                    "max": 7
+                },
+                // 偏移(运动)角度
+                "angle": {
+                    "value": 170,
+                    "float": 5
+                },
+                // 旋转
+                "rota": {
+                    "value": 30,
+                    "speed": 0.5,
+                    "floatValue": 10,
+                    "floatSpeed": 0.3
+                },
+                "area": {
+                    "leftTop": [1000, 600],
+                    "rightBottom": [1000, 800]
+                },
+            },
+            {
+                // 材料
+                "type": {
+                    "typeName": "image",
+					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/3.png"
+                },
+                // 数量
+                "number": 3,
+                // 尺寸
+                "size": {
+                    "min": 10,
+                    "max": 30
+                },
+                // 速度
+                "speed": {
+                    "min": 2,
+                    "max": 4
+                },
+                // 偏移(运动)角度
+                "angle": {
+                    "value": 160,
+                    "float": 10
+                },
+                // 旋转
+                "rota": {
+                    "value": 3,
+                    "speed": 0.1,
+                    "floatValue": 1,
+                    "floatSpeed": 0.2
+                },
+                "area": {
+                    "leftTop": [1000, 100],
+                    "rightBottom": [1500, 300]
+                },
+            },
+        ]);
 	},
 	initFeature: function () {
 		var self = this;

@@ -22,13 +22,9 @@
             location.href = "https://imgs.it2048.cn/nsg/web/m/index.html"
         }
 		;(function(win) {
-    		var tid;
     		function refreshRem() {
-    			let designSize = 1920; // 设计图尺寸
-    			let html = document.documentElement;
-    			let wW = html.clientWidth;// 窗口宽度
-    			let rem = wW * 100 / designSize; 
-    			document.documentElement.style.fontSize = rem + 'px';
+    			var deviceWidth = document.documentElement.clientWidth < 1920 ?  window.screen.width : 1920;
+    			document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / 19.2 + 'px !important';
     	    }
 
 		    refreshRem();
@@ -48,7 +44,7 @@
 			<div class="download_wrap">
 				<div class="qrocde">
 					<span>扫码下载游戏</span>
-					<img src="https://imgs.it2048.cn/nsg/pc/image/download_qrcode.jpg" alt="">
+					<img src="https://imgs.it2048.cn/nsg/pc/image/download_qrcode.png" alt="">
 				</div>
 				<div class="ios dowanload_btn">
 					<a href="javascript:void(0)">
@@ -183,7 +179,7 @@
 								</div>
 							</div>
 						</div>
-						<canvas id="fly"></canvas>
+						<canvas id="hero_particle" width="1920" height="1080"></canvas>
 					</div>
 				</div>
 				<div class="page page3 swiper-slide">
@@ -248,8 +244,7 @@
 	<script src="https://imgs.it2048.cn/nsg/common/lib/svga.min.js"></script>
 	<script src="https://imgs.it2048.cn/nsg/common/lib/video.min.js"></script>
 	<script src="https://imgs.it2048.cn/nsg/common/lib/bideo.js"></script>
-	<script src="./assets/js/main.js"></script>
 	<script src="https://imgs.it2048.cn/nsg/common/lib/fly.js"></script>
-
+	<script src="./assets/js/main.js"></script>
 </body>
 </html>

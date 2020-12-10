@@ -14,12 +14,12 @@ body {
   line-height: 1;
   height: 100%;
 }
-#fly {
+#hero_particle {
   position: absolute;
   height: 100%;
   width: 100%;
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
 top: 0;
 left: 0;
 z-index: 90;
@@ -40,7 +40,7 @@ z-index: 90;
   bottom: 0.1rem;
   left: 50%;
   font-size: 0.16rem;
-  color: #000;
+  color: #fff;
   transform: translate(-50%);
   z-index: 500;
 }
@@ -425,6 +425,7 @@ z-index: 90;
   top: 0;
   left: 50%;
   transform: translate(-50%);
+  transform-origin: center bottom;
 }
 .page2 .page_content .hero_list .hero_box .hero_item img{
  /* width: 100%;
@@ -538,27 +539,16 @@ z-index: 90;
 .hero_play{
   position: absolute;
   z-index: 10;
-  /*width: 60%;*/
-/*  height: 80%;
-  bottom: 0;
-  left: -10%;
-  */
-  /*left: -10%;*/
 }
 #hero_0{
   width: 8rem;
   height: 8.16rem;
-  /* top: 2.06rem; */
   bottom: 0.59rem;
   left: -0.4rem;
   background: url(https://imgs.it2048.cn/nsg/pc/image/heroimage/hero0.png) center no-repeat;
   background-size: contain;
 }
 #hero_1{
- /* width: 5.63rem;
-  height: 8.41rem;
-  top: 1.9rem;
-  left: 0.8rem;*/
   width: 8rem;
   height: 8.56rem;
   bottom: 0.46rem;
@@ -567,26 +557,16 @@ z-index: 90;
   background-size: contain;
 }
 #hero_2{
-  /*width: 4.84rem;
-  height: 7.95rem;
-  top: 2.33rem;
-  left: 1.2rem;*/
   width: 8.51rem;
   height: 8.06rem;
-  /* top: 2.33rem; */
   left: -1.4rem;
   bottom: 0.46rem;
   background: url(https://imgs.it2048.cn/nsg/pc/image/heroimage/hero2.png) center no-repeat;
   background-size: contain;
 }
 #hero_3{
-  /*width: 10.02rem;
-  height: 8.57rem;
-  top: 1.52rem;
-  left: -1.5rem;*/
   width: 10.31rem;
   height: 8.86rem;
-  /* top: 1.52rem; */
   left: -1.6rem;
   bottom: 0.49rem;
   background: url(https://imgs.it2048.cn/nsg/pc/image/heroimage/hero3.png) center no-repeat;
@@ -594,17 +574,15 @@ z-index: 90;
 }
 .hero_des{
   position: absolute;
-  /*top: 2.25rem;*/
   width: 7.52rem;
   height: 7.38rem;
   bottom: 1.18rem;
-      /*top: 2.03rem;*/
-   /* bottom: 1.02rem;
-    width: 6.62rem;
-    height: 6.48rem;*/
   right: 0;
-
 }
+.hero_play, .hero_des{
+  transform-origin: center bottom;
+}
+
 
 .hero_des img{
   width: 100%;
