@@ -23,7 +23,8 @@
         }
 		;(function(win) {
     		function refreshRem() {
-    			var deviceWidth = document.documentElement.clientWidth < 1920 ?  window.screen.width : 1920;
+    			var cw = document.documentElement.clientWidth;
+    			var deviceWidth = cw < 1920 ?  cw : 1920;
     			document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / 19.2 + 'px !important';
     	    }
 
