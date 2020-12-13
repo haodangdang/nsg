@@ -24,11 +24,21 @@
 		;(function(win) {
     		function refreshRem() {
     			var cw = document.documentElement.clientWidth;
+    			if(cw <= 1200) {
+    				cw = 1200;
+    			}
     			var deviceWidth = cw < 1920 ?  cw : 1920;
     			document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + deviceWidth / 19.2 + 'px !important';
     	    }
 
 		    refreshRem();
+		    if (window.addEventListener) {
+			  window.addEventListener('resize', function () {
+			  	console.log('hihi');
+			      refreshRem()
+			      main.initHeroSize();
+			  }, false)
+			}
 
 		})(window);
 	</script>
@@ -105,7 +115,10 @@
 				<div class="page page1 swiper-slide">
 					<div class="page_content">
 						<div class="logo">
-							<img src="https://imgs.it2048.cn/nsg/pc/image/logo.png" alt="">
+							<!-- <img src="https://imgs.it2048.cn/nsg/pc/image/logo.png" alt=""> -->
+							<img class="logo_bg2" src="https://imgs.it2048.cn/nsg/pc/image/logo_bg2.png" alt="">
+							<img class="logo_bg1" src="https://imgs.it2048.cn/nsg/pc/image/logo_bg1.png" alt="">
+							<img class="logo_text" src="https://imgs.it2048.cn/nsg/pc/image/logo_txt.png" alt="">
 						</div>
 						<div class="playvideo_btn video_btn" data-id="home" id="homePlay"  src="https://imgs.it2048.cn/nsg/common/svga/playbtn.svga"  loops="0" clearsAfterStop="true"></div>
 						<div class="video_wrap" id="video_intro_wrap">

@@ -34,11 +34,19 @@ var main = {
 		})
 	},
 	initHeroSize: function () {
+		var baseW = 1920, baseH = 1080;
 		var sw = document.body.clientWidth;
 		var sh = document.body.clientHeight;
-		var h = (sw <= 1366 && sh <= 768) ? 768 : 1080;
-		var screenHight = document.body.clientHeight;
-		var scale = screenHight/h;
+		var needResize = false;
+		var h = baseH, wScale = 1;
+		if(sh <= 768){
+			var h = 768;
+		}else if( sh > 768 && sh <= 810){
+			var h = 810;
+		}else if(sh > 810 && sw < baseW){
+			wScale = baseW / sw;
+		}
+		var scale = sh / h * wScale;
 		var moveX = 50 / scale;
 		var dom = document.querySelectorAll('.hero_box_item');
 		for (i = 0; i < dom.length; i++) {
@@ -173,7 +181,7 @@ var main = {
 	        loopedSlides: 5,
 	        grabCursor: true,
 		}); 
-		// 双向控制
+		// 鍙屽悜鎺у埗
 	    heroSwiper.controller.control = heroHeadSwiper;
 	    heroHeadSwiper.controller.control = heroSwiper;
 	},
@@ -182,29 +190,29 @@ var main = {
         "hero_particle",
         [
             {
-                // 材料
+                // 鏉愭枡
                 "type": {
                     "typeName": "image",
 					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/2.png"
                 },
-                // 数量
+                // 鏁伴噺
                 "number": 5,
-                // 尺寸
+                // 灏哄
                 "size": {
                     "min": 30,
                     "max": 80
                 },
-                // 速度
+                // 閫熷害
                 "speed": {
                     "min": 2,
                     "max": 12
                 },
-                // 偏移(运动)角度
+                // 鍋忕Щ(杩愬姩)瑙掑害
                 "angle": {
                     "value": 160,
                     "float": 10
                 },
-                // 旋转
+                // 鏃嬭浆
                 "rota": {
                     "value": 15,
                     "speed": 0.1,
@@ -217,29 +225,29 @@ var main = {
                 },
             },
             {
-                // 材料
+                // 鏉愭枡
                 "type": {
                     "typeName": "image",
 					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/1.png"
                 },
-                // 数量
+                // 鏁伴噺
                 "number": 2,
-                // 尺寸
+                // 灏哄
                 "size": {
                     "min": 60,
                     "max": 80
                 },
-                // 速度
+                // 閫熷害
                 "speed": {
                     "min": 2,
                     "max": 5
                 },
-                // 偏移(运动)角度
+                // 鍋忕Щ(杩愬姩)瑙掑害
                 "angle": {
                     "value": 160,
                     "float": 5
                 },
-                // 旋转
+                // 鏃嬭浆
                 "rota": {
                     "value": 10,
                     "speed": 0.1,
@@ -252,29 +260,29 @@ var main = {
                 },
             },
             {
-                // 材料
+                // 鏉愭枡
                 "type": {
                     "typeName": "image",
 					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/4.png"
                 },
-                // 数量
+                // 鏁伴噺
                 "number": 1,
-                // 尺寸
+                // 灏哄
                 "size": {
                     "min": 360,
                     "max": 380
                 },
-                // 速度
+                // 閫熷害
                 "speed": {
                     "min": 5,
                     "max": 7
                 },
-                // 偏移(运动)角度
+                // 鍋忕Щ(杩愬姩)瑙掑害
                 "angle": {
                     "value": 170,
                     "float": 5
                 },
-                // 旋转
+                // 鏃嬭浆
                 "rota": {
                     "value": 30,
                     "speed": 0.5,
@@ -287,29 +295,29 @@ var main = {
                 },
             },
             {
-                // 材料
+                // 鏉愭枡
                 "type": {
                     "typeName": "image",
 					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/3.png"
                 },
-                // 数量
+                // 鏁伴噺
                 "number": 3,
-                // 尺寸
+                // 灏哄
                 "size": {
                     "min": 10,
                     "max": 30
                 },
-                // 速度
+                // 閫熷害
                 "speed": {
                     "min": 2,
                     "max": 4
                 },
-                // 偏移(运动)角度
+                // 鍋忕Щ(杩愬姩)瑙掑害
                 "angle": {
                     "value": 160,
                     "float": 10
                 },
-                // 旋转
+                // 鏃嬭浆
                 "rota": {
                     "value": 3,
                     "speed": 0.1,
