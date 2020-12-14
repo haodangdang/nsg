@@ -310,16 +310,17 @@ body {
 .logo_bg1{
   width: 8.94rem;
   height: 5.17rem;
-  top: 0;
-  left: 0;
-  animation: flash  4s infinite;
+  top: 0.1rem;
+  left: 0.2rem;
+  animation: flash 4s infinite;
 }
 .logo_bg2{
   width: 6.34rem;
   height: 5.91rem;
-  left: 2rem;
-  top: 0;
+  left: 2.1rem;
+  top: -0.3rem;
   animation: rotateRight 3.5s infinite;
+  z-index: 10;
 }
 .page1 .page_content{
   height: 100%;
@@ -551,7 +552,7 @@ body {
   height: 2rem;
   z-index: 400;
   transform: translate(-50%);
-  top: 1.2rem;
+  top: 1.6rem;
   cursor: pointer;
 }
 .herovideo_btn{
@@ -771,5 +772,3 @@ body {
     opacity: 1;
   }
 }
-
-
