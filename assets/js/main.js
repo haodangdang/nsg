@@ -87,7 +87,7 @@ var main = {
 			autoplay: false,
 			src: [
 		      {
-		        src: 'https://imgs.it2048.cn/nsg/pc/video/intro.mp4',
+		        src: 'http://nsgweb.bigkraken.com/res/pc/video/intro.mp4',
 		        type: 'video/mp4'
 		      }
 		    ],
@@ -99,7 +99,7 @@ var main = {
 						resize: true,
 						src: [
 					      {
-					        src: 'https://imgs.it2048.cn/nsg/pc/video/loop.mp4',
+					        src: 'http://nsgweb.bigkraken.com/res/pc/video/loop.mp4',
 					        type: 'video/mp4'
 					      }
 					    ],
@@ -128,7 +128,7 @@ var main = {
 		}
 		
 		var data = {
-		    src: 'https://imgs.it2048.cn/nsg/common/gamevideo/video'+index+'.mp4',
+		    src: 'http://nsgweb.bigkraken.com/res/common/gamevideo/video'+index+'.mp4',
 		    type: 'video/mp4'
 		};
 		self.gameVideo.pause();
@@ -193,7 +193,7 @@ var main = {
                 // 閺夋劖鏋�
                 "type": {
                     "typeName": "image",
-					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/2.png"
+					"url": "http://nsgweb.bigkraken.com/res/pc/image/fire/2.png"
                 },
                 // 閺佷即鍣�
                 "number": 5,
@@ -228,7 +228,7 @@ var main = {
                 // 閺夋劖鏋�
                 "type": {
                     "typeName": "image",
-					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/1.png"
+					"url": "http://nsgweb.bigkraken.com/res/pc/image/fire/1.png"
                 },
                 // 閺佷即鍣�
                 "number": 2,
@@ -263,7 +263,7 @@ var main = {
                 // 閺夋劖鏋�
                 "type": {
                     "typeName": "image",
-					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/4.png"
+					"url": "http://nsgweb.bigkraken.com/res/pc/image/fire/4.png"
                 },
                 // 閺佷即鍣�
                 "number": 1,
@@ -298,7 +298,7 @@ var main = {
                 // 閺夋劖鏋�
                 "type": {
                     "typeName": "image",
-					"url": "https://imgs.it2048.cn/nsg/pc/image/fire/3.png"
+					"url": "http://nsgweb.bigkraken.com/res/pc/image/fire/3.png"
                 },
                 // 閺佷即鍣�
                 "number": 3,
